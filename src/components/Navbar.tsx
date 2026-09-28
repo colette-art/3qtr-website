@@ -6,10 +6,9 @@ import logo from "@/assets/3qtr-logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
+  { to: "/leaders-organizations", label: "Leaders & Organizations" },
+  { to: "/sports-teams", label: "Sports Teams" },
   { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/who-we-serve", label: "Who We Serve" },
-  { to: "/nil-faq", label: "NIL FAQ" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -21,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-20 px-6">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="3QTR" className="h-12 w-auto" />
+          <img src={logo} alt="3Qtr" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop */}

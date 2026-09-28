@@ -90,7 +90,7 @@ const NilFaq = () => {
               </h2>
               <div className="mt-8">
                 <Link
-                  to="/contact"
+                  to="/sports-teams#inquiry"
                   className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold bg-gold-gradient text-primary-foreground rounded-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
                 >
                   Contact 3Qtr <ArrowRight size={16} />

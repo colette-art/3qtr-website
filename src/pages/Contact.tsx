@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { Phone, Mail, Globe } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
@@ -16,7 +17,7 @@ const Contact = () => {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, website: honeypot }),
+        body: JSON.stringify({ ...form, type: "general", website: honeypot }),
       });
       if (!res.ok) throw new Error(String(res.status));
     } catch {
@@ -37,7 +38,7 @@ const Contact = () => {
             <SectionHeading
               label="Contact"
               title="Start the Conversation"
-              description="Ready to explore what 3QTR can do for your team? Reach out for a complimentary discovery call."
+              description="Ready to explore what 3Qtr can do for your organization or team? Reach out for a complimentary discovery call."
             />
           </AnimatedSection>
 
@@ -141,8 +142,12 @@ const Contact = () => {
                 <div className="p-6 rounded-sm border border-primary/20 bg-primary/5">
                   <h4 className="font-display text-lg font-semibold text-primary mb-2">Free Discovery Call</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Not sure where to start? Book a complimentary 30-minute consultation to explore how 3QTR can serve your team.
+                    Not sure where to start? Book a complimentary 30-minute consultation to explore how 3Qtr can serve your organization or team.
                   </p>
+                  <div className="mt-4 flex flex-col gap-2 text-sm font-semibold">
+                    <Link to="/leaders-organizations#inquiry" className="text-primary hover:underline">Leaders &amp; Organizations →</Link>
+                    <Link to="/sports-teams#inquiry" className="text-primary hover:underline">Competitive Sports Teams →</Link>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>

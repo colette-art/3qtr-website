@@ -6,9 +6,9 @@ const Footer = () => (
     <div className="container mx-auto px-6 py-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <img src={logo} alt="3QTR" className="h-16 w-auto mb-4" />
+          <img src={logo} alt="3Qtr" className="h-16 w-auto mb-4" />
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-            Unlocking the 4th Quarter of Human Performance through assessment-based development for competitive sports teams.
+            Unlocking Human Performance. Stronger People. Stronger Teams. Better Performance.
           </p>
         </div>
         <div>
@@ -16,9 +16,10 @@ const Footer = () => (
           <div className="flex flex-col gap-3">
             {[
               { to: "/", label: "Home" },
+              { to: "/leaders-organizations", label: "Leaders & Organizations" },
+              { to: "/sports-teams", label: "Competitive Sports Teams" },
+              { to: "/nil-faq", label: "NIL FAQ" },
               { to: "/about", label: "About" },
-              { to: "/services", label: "Services" },
-              { to: "/who-we-serve", label: "Who We Serve" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <Link key={l.to} to={l.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -38,7 +39,7 @@ const Footer = () => (
       </div>
       <div className="gold-divider mt-12 mb-6" />
       <p className="text-center text-xs text-muted-foreground">
-        Â© {new Date().getFullYear()} 3QTR. All rights reserved.
+        © {new Date().getFullYear()} 3Qtr. All rights reserved.
       </p>
       <p className="text-center text-xs text-muted-foreground mt-2">
         Created by Aurex Services

@@ -1,14 +1,14 @@
-// 3QTR Sports Performance Consulting
+// 3Qtr | Unlocking Human Performance
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Services from "./pages/Services";
-import WhoWeServe from "./pages/WhoWeServe";
+import LeadersOrganizations from "./pages/LeadersOrganizations";
+import SportsTeams from "./pages/SportsTeams";
 import Contact from "./pages/Contact";
 import NilFaq from "./pages/NilFaq";
 import NotFound from "./pages/NotFound";
@@ -26,8 +26,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/who-we-serve" element={<WhoWeServe />} />
+          <Route path="/leaders-organizations" element={<LeadersOrganizations />} />
+          <Route path="/sports-teams" element={<SportsTeams />} />
+          {/* Old URLs from the previous site structure */}
+          <Route path="/services" element={<Navigate to="/sports-teams" replace />} />
+          <Route path="/who-we-serve" element={<Navigate to="/sports-teams" replace />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/nil-faq" element={<NilFaq />} />
           <Route path="*" element={<NotFound />} />
