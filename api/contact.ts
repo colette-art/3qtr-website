@@ -38,11 +38,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // 1) Save to Supabase (the source of truth — if this fails we report an error).
+  // New-format keys (sb_secret_...) are opaque, not JWTs: send them only in `apikey`.
+  // Legacy service_role keys are JWTs and also go in the Authorization header.
+  const isOpaqueKey = SUPABASE_SERVICE_ROLE_KEY.startsWith("sb_");
   const dbRes = await fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
     method: "POST",
     headers: {
       apikey: SUPABASE_SERVICE_ROLE_KEY,
-      Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+      ...(isOpaqueKey ? {} : { Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` }),
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
