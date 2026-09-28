@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 42 78% 55%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 42 78% 55%;
+    --accent-foreground: 220 30% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 42 78% 55%;
+
+    --radius: 0.5rem;
+
+    --navy: 220 30% 8%;
+    --navy-light: 220 25% 12%;
+    --navy-lighter: 220 20% 18%;
+    --gold: 42 78% 55%;
+    --gold-light: 42 60% 70%;
+    --gold-dark: 42 80% 42%;
+    --brand-disc: 0 70% 45%;
+    --brand-indigo: 145 63% 42%;
+    --brand-eq: 30 90% 50%;
+    --cream: 40 20% 95%;
+    --gray-light: 220 10% 90%;
+    --gray-section: 220 15% 95%;
+
+    --sidebar-background: 220 30% 8%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 42 78% 55%;
+    --sidebar-primary-foreground: 220 30% 8%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 42 78% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(42, 78%, 55%), hsl(42, 60%, 70%), hsl(42, 78%, 55%));
+  }
+
+  .border-gradient-gold {
+    border-image: linear-gradient(135deg, hsl(42, 78%, 55%), hsl(42, 60%, 70%)) 1;
+  }
+
+  .bg-navy-gradient {
+    background: linear-gradient(180deg, hsl(220, 30%, 8%) 0%, hsl(220, 25%, 12%) 100%);
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, hsl(42, 78%, 55%), hsl(42, 80%, 42%));
+  }
+
+  .section-light {
+    background: hsl(var(--gray-section));
+    color: hsl(var(--navy));
+  }
+
+  .gold-divider {
+    @apply w-20 h-0.5 mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(42, 78%, 55%), transparent);
+  }
+
+  .gold-divider-left {
+    @apply w-20 h-0.5;
+    background: linear-gradient(90deg, hsl(42, 78%, 55%), transparent);
+  }
+}
