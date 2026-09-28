@@ -1,7 +1,10 @@
 ﻿import { Link } from "react-router-dom";
 import logo from "@/assets/3qtr-logo.png";
+import { useAudience } from "@/context/AudienceContext";
 
-const Footer = () => (
+const Footer = () => {
+  const { audience } = useAudience();
+  return (
   <footer className="bg-card border-t border-border">
     <div className="container mx-auto px-6 py-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -18,7 +21,7 @@ const Footer = () => (
               { to: "/", label: "Home" },
               { to: "/leaders-organizations", label: "Leaders & Organizations" },
               { to: "/sports-teams", label: "Competitive Sports Teams" },
-              { to: "/nil-faq", label: "NIL FAQ" },
+              ...(audience === "sports" ? [{ to: "/nil-faq", label: "NIL FAQ" }] : []),
               { to: "/about", label: "About" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
@@ -46,6 +49,7 @@ const Footer = () => (
       </p>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;

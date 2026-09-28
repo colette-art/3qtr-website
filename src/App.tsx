@@ -5,6 +5,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Gateway from "@/components/Gateway";
+import { AudienceProvider } from "@/context/AudienceContext";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import LeadersOrganizations from "./pages/LeadersOrganizations";
@@ -21,8 +23,10 @@ const App = () => (
     <TooltipProvider>
       <Sonner />
       <BrowserRouter>
+        <AudienceProvider>
         <ScrollToTop />
         <Navbar />
+        <Gateway />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -36,6 +40,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        </AudienceProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
