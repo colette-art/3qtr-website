@@ -119,10 +119,10 @@ const About = () => {
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/leaders-organizations#inquiry" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold bg-gold-gradient text-primary-foreground rounded-sm uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Leaders &amp; Organizations <ArrowRight size={16} />
+                Business <ArrowRight size={16} />
               </Link>
               <Link to="/sports-teams#inquiry" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold border border-primary text-primary rounded-sm uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors">
-                Competitive Sports Teams <ArrowRight size={16} />
+                Sports <ArrowRight size={16} />
               </Link>
             </div>
           </AnimatedSection>

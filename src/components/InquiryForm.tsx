@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { toast } from "sonner";
-import { Mail } from "lucide-react";
+import { CalendarDays } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/constants";
 
 export type InquiryType = "organization" | "sports";
 
@@ -172,10 +173,12 @@ const InquiryForm = ({ type }: Props) => {
           {submitting ? "Sending..." : "Start the Conversation"}
         </button>
         <a
-          href="mailto:Colette@3Qtr.net?subject=Discovery%20Meeting%20Request"
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold border border-primary text-primary rounded-sm uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
         >
-          <Mail size={16} /> Schedule a Discovery Meeting
+          <CalendarDays size={16} /> Schedule a Discovery Meeting
         </a>
       </div>
     </form>

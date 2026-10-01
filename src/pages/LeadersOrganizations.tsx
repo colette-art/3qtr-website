@@ -4,38 +4,49 @@ import performanceAbstract from "@/assets/performance-abstract.jpg";
 const LeadersOrganizations = () => (
   <PathLayout
     type="organization"
-    label="Leaders & Organizations"
-    title="Leaders & Organizations"
-    tagline="Strengthen leadership. Develop people. Improve how teams work together."
+    label="Business"
+    title="Business"
+    tagline="Develop people. Strengthen process. Improve performance."
     heroImage={performanceAbstract}
     intro={
       <>
         <p>
-          Organizations may come to 3Qtr because they are experiencing leadership or team challenges, communication gaps, low morale, misaligned goals, unclear expectations, or limited development opportunities.
+          Organizations come to 3Qtr for many reasons: leadership or team challenges, communication gaps, low morale, misaligned goals, unclear expectations, or operational results that fall short of expectations. Others recognize the value of investing in their people and strengthening their operations before challenges arise.
         </p>
-        <p>Others recognize the value of investing in their leaders and people before challenges arise.</p>
         <p>
-          3Qtr begins by listening. We work to understand your organization, your people, your goals, and what may be limiting progress. When a challenge exists, we look beyond the visible symptoms to identify the people, leadership, or organizational factors that may be contributing to it.
+          3Qtr begins by listening. We work to understand your organization, your people, your goals, and how work gets done. We assess gaps across people, processes, and performance, looking beyond visible symptoms to understand what may be limiting progress.
         </p>
-        <p>From there, we develop a practical solution tailored to your needs.</p>
+        <p>
+          Our approach examines how leadership, team dynamics, workflows, accountability, and organizational priorities work together. This helps identify where expectations are unclear, processes create obstacles, or teams need additional support and development.
+        </p>
+        <p>
+          From there, we develop a practical strategy and action plan tailored to your needs, with clear priorities, next steps, and measures of progress. Whether your goal is to develop leaders, strengthen teams, improve operations, or address a specific challenge, 3Qtr helps you turn insight into action.
+        </p>
       </>
     }
     servicesTitle="Services for Leaders & Organizations"
     services={[
-      "Leadership and behavioral assessment",
-      "Emotional-intelligence assessment",
-      "Leadership experience (The Maxwell Leadership Game)",
-      "Coaching and mentoring",
-      "Mastermind groups and facilitated learning experiences",
-      "Workshops / lunch-and-learns",
-      "Strategic-session facilitation",
-      "Keynotes and speaking engagements",
+      {
+        title: "Organizational & Operational Consulting",
+        description: "Assess gaps across people, process, and performance and develop a practical strategy or action plan with clear priorities and next steps.",
+      },
+      {
+        title: "Leadership Development & Coaching",
+        description: "Build self-awareness, emotional intelligence, and leadership effectiveness through assessments, coaching, and mentoring.",
+      },
+      {
+        title: "Team Development & Effectiveness",
+        description: "Strengthen communication, trust, alignment, and accountability through tailored team experiences.",
+      },
+      {
+        title: "Strategic Planning & Facilitation",
+        description: "Guide focused discussions that clarify goals, align expectations, and turn ideas into actionable plans.",
+      },
+      {
+        title: "Workshops & Speaking",
+        description: "Engage and develop your people through practical workshops, lunch-and-learns, and keynotes tailored to your audience.",
+      },
     ]}
-    closing={
-      <p>
-        Our goal is not simply to deliver a program. It is to strengthen leadership, improve communication, support employee development, build trust, and help people work together more effectively.
-      </p>
-    }
     formPrompt="Tell us about your organization and what you would like to accomplish."
   />
 );

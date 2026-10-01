@@ -1,9 +1,10 @@
 import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, Globe } from "lucide-react";
+import { Phone, Mail, Globe, CalendarDays } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
 import { toast } from "sonner";
+import { CALENDLY_URL, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/constants";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", org: "", message: "" });
@@ -125,13 +126,13 @@ const Contact = () => {
                   <h3 className="font-display text-xl font-semibold mb-6">Get in Touch</h3>
                   <div className="gold-divider-left mb-6" />
                   <div className="space-y-5">
-                    <a href="tel:2039798702" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
+                    <a href={`tel:${CONTACT_PHONE_HREF}`} className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
                       <Phone size={20} className="text-primary shrink-0" />
-                      <span>(203) 979-8702</span>
+                      <span>{CONTACT_PHONE_DISPLAY}</span>
                     </a>
-                    <a href="mailto:Colette@3Qtr.net" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
                       <Mail size={20} className="text-primary shrink-0" />
-                      <span>Colette@3Qtr.net</span>
+                      <span>{CONTACT_EMAIL}</span>
                     </a>
                     <div className="flex items-center gap-4 text-muted-foreground">
                       <Globe size={20} className="text-primary shrink-0" />
@@ -144,9 +145,17 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Not sure where to start? Book a complimentary 30-minute consultation to explore how 3Qtr can serve your organization or team.
                   </p>
+                  <a
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                  >
+                    <CalendarDays size={16} /> Book a Free Discovery Call
+                  </a>
                   <div className="mt-4 flex flex-col gap-2 text-sm font-semibold">
-                    <Link to="/leaders-organizations#inquiry" className="text-primary hover:underline">Leaders &amp; Organizations →</Link>
-                    <Link to="/sports-teams#inquiry" className="text-primary hover:underline">Competitive Sports Teams →</Link>
+                    <Link to="/leaders-organizations#inquiry" className="text-primary hover:underline">Business →</Link>
+                    <Link to="/sports-teams#inquiry" className="text-primary hover:underline">Sports →</Link>
                   </div>
                 </div>
               </div>
